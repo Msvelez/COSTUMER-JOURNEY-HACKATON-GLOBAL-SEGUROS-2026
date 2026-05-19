@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlobalMás Profesional — Viaje del Cliente</title>
-  <!-- Fuentes de Google -->
   <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <!-- Vinculación del archivo CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- BARRA DE PROGRESO -->
   <div id="barra-progreso"></div>
 
-  <!-- NAVEGACIÓN -->
   <nav id="main-nav">
     <a href="#s0" class="contenedor-logo">
       <div class="icono-logo">
@@ -38,7 +34,6 @@
     <a href="#cta" class="btn-nav">Quiero proteger a mi hijo →</a>
   </nav>
 
-  <!-- BARRA LATERAL -->
   <div class="barra-lateral" id="sb">
     <div class="nodo-lateral" onclick="goTo('s0')">
       <div class="punto-lateral activo" id="sd0"></div>
@@ -71,13 +66,11 @@
     </div>
   </div>
 
-  <!-- S0 — HERO -->
   <section id="s0" class="fondo-hero">
-    <!-- Manchas de fondo -->
     <div class="mancha" style="width:500px;height:500px;background:var(--azul-medio);top:-100px;right:-100px;opacity:.2"></div>
     <div class="mancha" style="width:300px;height:300px;background:var(--rojo);bottom:0;left:30%;opacity:.08"></div>
 
-    <div class="contenido-hero">
+    <div class="columna-texto-hero">
       <p class="ceja-hero revelar">GlobalMás Profesional · Colombia 2026</p>
       <h1 class="titulo-seccion revelar r1" style="color:white;font-size:clamp(34px,4vw,58px)">
         El journey que<br>
@@ -118,13 +111,11 @@
       </div>
     </div>
 
-    <!-- ELEMENTO VISUAL HERO -->
     <div class="imagen-clave-hero">
-      <img class="img-clave-hero" src="data:image/png;base64,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" />
+      <img class="img-clave-hero" src="https://res.cloudinary.com/dtmzr9jhq/image/upload/v1779159884/key_visual_global_seguros_cz7dhz.jpg" alt="GlobalMás Profesional - Key Visual" fetchpriority="high">
     </div>
   </section>
 
-  <!-- Vinculación del archivo JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
