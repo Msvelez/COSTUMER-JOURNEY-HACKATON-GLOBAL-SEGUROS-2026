@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobalMás Profesional — Viaje del Cliente</title>
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Vinculación del archivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BARRA DE PROGRESO -->
+  <div id="barra-progreso"></div>
+
+  <!-- NAVEGACIÓN -->
+  <nav id="main-nav">
+    <a href="#s0" class="contenedor-logo">
+      <div class="icono-logo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="12" rx="10" ry="7" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <path d="M7 12l3.5 3.5L18 8" stroke="#DC2319" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="texto-logo"><strong>Global</strong><span>Seguros</span></span>
+    </a>
+
+    <div class="nav-viaje">
+      <div class="nav-indicador e0 activo" id="np0"></div>
+      <div class="nav-indicador e1" id="np1"></div>
+      <div class="nav-indicador e2" id="np2"></div>
+      <div class="nav-indicador e3" id="np3"></div>
+      <div class="nav-indicador e4" id="np4"></div>
+      <div class="nav-indicador e5" id="np5"></div>
+    </div>
+
+    <a href="#cta" class="btn-nav">Quiero proteger a mi hijo →</a>
+  </nav>
+
+  <!-- BARRA LATERAL -->
+  <div class="barra-lateral" id="sb">
+    <div class="nodo-lateral" onclick="goTo('s0')">
+      <div class="punto-lateral activo" id="sd0"></div>
+      <span class="etiqueta-lateral">Inicio</span>
+    </div>
+    <div class="linea-lateral" id="st0"></div>
+    <div class="nodo-lateral" onclick="goTo('s1')">
+      <div class="punto-lateral" id="sd1"></div>
+      <span class="etiqueta-lateral">Pre-conciencia</span>
+    </div>
+    <div class="linea-lateral" id="st1"></div>
+    <div class="nodo-lateral" onclick="goTo('s2')">
+      <div class="punto-lateral" id="sd2"></div>
+      <span class="etiqueta-lateral">Consideración</span>
+    </div>
+    <div class="linea-lateral" id="st2"></div>
+    <div class="nodo-lateral" onclick="goTo('s3')">
+      <div class="punto-lateral" id="sd3"></div>
+      <span class="etiqueta-lateral">Descubrimiento</span>
+    </div>
+    <div class="linea-lateral" id="st3"></div>
+    <div class="nodo-lateral" onclick="goTo('s4')">
+      <div class="punto-lateral" id="sd4"></div>
+      <span class="etiqueta-lateral">Venta</span>
+    </div>
+    <div class="linea-lateral" id="st4"></div>
+    <div class="nodo-lateral" onclick="goTo('s5')">
+      <div class="punto-lateral" id="sd5"></div>
+      <span class="etiqueta-lateral">Post-venta</span>
+    </div>
+  </div>
+
+  <!-- S0 — HERO -->
+  <section id="s0" class="fondo-hero">
+    <!-- Manchas de fondo -->
+    <div class="mancha" style="width:500px;height:500px;background:var(--azul-medio);top:-100px;right:-100px;opacity:.2"></div>
+    <div class="mancha" style="width:300px;height:300px;background:var(--rojo);bottom:0;left:30%;opacity:.08"></div>
+
+    <div class="contenido-hero">
+      <p class="ceja-hero revelar">GlobalMás Profesional · Colombia 2026</p>
+      <h1 class="titulo-seccion revelar r1" style="color:white;font-size:clamp(34px,4vw,58px)">
+        El journey que<br>
+        <em style="color:var(--rojo)">construye</em> el futuro<br>
+        de tu hijo
+      </h1>
+      <p class="parrafo-cuerpo claro revelar r2" style="max-width:460px">
+        Acompaña a Paola en cada etapa de su viaje con GlobalMás Profesional.
+        <strong>Del primer pensamiento a la tranquilidad total.</strong>
+      </p>
+
+      <div class="acciones-hero revelar r3">
+        <a href="#s1" class="btn-principal">Vivir el journey</a>
+        <a href="#cta" class="btn-fantasma" style="color:rgba(255,255,255,.75)">Cotizar ahora</a>
+      </div>
+      <div class="guia-desplazamiento revelar r3">
+        <span class="punto-rebote">↓</span>
+        Desplázate para recorrer cada etapa
+      </div>
+
+      <div class="barra-confianza revelar r4">
+        <div class="item-confianza">
+          <span class="valor-confianza">AA+</span>
+          <span class="etiqueta-confianza">Calificación 2025</span>
+        </div>
+        <div class="item-confianza">
+          <span class="valor-confianza">+40K</span>
+          <span class="etiqueta-confianza">Familias protegidas</span>
+        </div>
+        <div class="item-confianza">
+          <span class="valor-confianza">25+</span>
+          <span class="etiqueta-confianza">Años de experiencia</span>
+        </div>
+        <div class="item-confianza">
+          <span class="valor-confianza">$35K</span>
+          <span class="etiqueta-confianza">Desde / mes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELEMENTO VISUAL HERO -->
+    <div class="imagen-clave-hero">
+      <img class="img-clave-hero" src="data:image/png;base64,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" />
+    </div>
+  </section>
+
+  <!-- Vinculación del archivo JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
