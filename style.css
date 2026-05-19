@@ -77,48 +77,131 @@ nav.con-desplazamiento{box-shadow:0 2px 28px rgba(0,50,125,0.09)}
   background:linear-gradient(90deg,var(--azul),var(--rojo));width:0%;z-index:600;
 }
 
-/* SECCIONES (Sistemas de rejilla corregidos) */
+/* SECCIONES Y DISEÑO DE DOS COLUMNAS */
 section{
   min-height:100vh;
-  padding:120px 5% 80px 8%;
+  padding:120px 8% 80px 10%;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1.1fr 0.9fr;
   align-items:center;
-  gap:40px;
+  gap:60px;
   position:relative;
 }
-.columna-texto-hero{
+section.completa{
+  grid-template-columns:1fr;
+  justify-items:center;
+  text-align:center;
+  padding:120px 15%;
+}
+
+.columna-texto, .contenido-hero{
   position:relative;
   z-index:10;
 }
-
-/* CONTROL DE VISIBILIDAD SEGURO (Muestra todo por defecto) */
-.revelar, .desde-izquierda, .desde-derecha, .escala-entrada {
-  opacity: 1;
-  transform: none;
-  transition: opacity .6s ease, transform .6s ease;
+.columna-visual, .imagen-clave-hero{
+  position:relative;
+  z-index:5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-/* ELEMENTOS DEL HERO */
+/* COMPONENTE: ETIQUETA DE CAPÍTULO */
+.etiqueta-capitulo{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 16px 6px 6px;border-radius:20px;margin-bottom:24px;
+}
+.num-capitulo{
+  width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:white;
+}
+
+/* TIPOGRAFÍA GLOBAL */
+.titulo-seccion{
+  font-size:clamp(28px, 3vw, 44px);
+  font-weight:700;line-height:1.2;
+  letter-spacing:-.5px;color:var(--azul-oscuro);
+  margin-bottom:22px;
+}
+.titulo-seccion em{font-style:normal}
+.parrafo-cuerpo{
+  font-size:16px;line-height:1.75;
+  color:var(--gris-suave);margin-bottom:16px;
+}
+.parrafo-cuerpo strong{color:var(--gris-texto)}
+.parrafo-cuerpo.claro{color:rgba(255,255,255,.65)}
+.parrafo-cuerpo.claro strong{color:white}
+
+/* COMPONENTE: TARJETAS DE CRISTAL / CAJAS */
+.tarjeta-cristal{
+  width:100%;max-width:440px;
+  border-radius:18px;padding:28px;
+  border:1px solid rgba(0,50,125,0.06);
+}
+.caja-analisis{
+  border-radius:14px;padding:20px;margin:24px 0 0 0;
+  border-left:4px solid;
+}
+.etiqueta-analisis{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px}
+.parrafo-analisis{font-size:14px;line-height:1.6;color:var(--gris-texto);margin:0}
+
+/* COMPONENTE: PASOS VERTICALES (Etapa 1) */
+.pasos-verticales{display:flex;flex-direction:column;gap:4px;margin-top:10px}
+.paso-vertical{display:flex;gap:16px;padding-bottom:20px;position:relative}
+.paso-vertical::before{
+  content:"";position:absolute;left:14px;top:32px;bottom:0;
+  width:2px;background:rgba(0,50,125,.08);
+}
+.paso-vertical:last-child::before{display:none}
+.paso-vertical:last-child{padding-bottom:0}
+.num-paso{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--azul);color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;flex-shrink:0;z-index:1;
+}
+.bloque-paso h4{font-size:15px;font-weight:700;color:var(--azul-oscuro);margin-bottom:4px}
+.bloque-paso p{font-size:13px;color:var(--gris-suave);line-height:1.5;margin:0}
+
+/* COMPONENTE: COMPARATIVA VS (Etapa 2) */
+.lista-dolor-beneficio{width:100%;max-width:440px;background:var(--gris-fondo);padding:24px;border-radius:16px}
+.fila-dolor-beneficio{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.dolor-tarjeta{
+  background:rgba(220,35,25,.06);border:1px solid rgba(220,35,25,.12);
+  border-radius:10px;padding:12px 16px;font-size:14px;color:var(--gris-texto);text-align:center;
+}
+.flecha-tarjeta{text-align:center;color:var(--dorado);font-size:16px;font-weight:700}
+.beneficio-tarjeta{
+  background:var(--azul);border:1px solid var(--azul);
+  border-radius:10px;padding:12px 16px;font-size:14px;font-weight:600;color:white;text-align:center;
+}
+
+/* FONDOS DE SECCIÓN */
 .fondo-hero{background:var(--azul-oscuro)}
+.fondo-crema{background:var(--crema)}
+.fondo-blanco{background:var(--blanco)}
+.fondo-gris{background:var(--gris-fondo)}
+.fondo-oscuro{background:var(--azul-oscuro);color:white}
+.fondo-oscuro .titulo-seccion{color:white}
+.fondo-azul{background:var(--azul-medio)}
+
+/* VARIACIONES ESPECÍFICAS DEL HERO */
 .ceja-hero{
   font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
   color:var(--dorado);margin-bottom:22px;display:flex;align-items:center;gap:10px;
 }
 .ceja-hero::before{content:"";width:22px;height:2px;background:var(--dorado)}
-.titulo-seccion{font-weight:700;line-height:1.1;margin-bottom:20px}
-.parrafo-cuerpo.claro{color:rgba(255,255,255,.6)}
-.parrafo-cuerpo.claro strong{color:white}
-
 .acciones-hero{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:36px}
 .btn-principal{
   background:var(--rojo);color:white;padding:16px 36px;border-radius:9px;
-  font-size:16px;font-weight:700;text-decoration:none;
+  font-size:16px;font-weight:700;text-decoration:none;display:inline-block;
+  cursor:pointer;transition:background .2s;
 }
+.btn-principal:hover{background:#b81d14}
 .btn-fantasma{color:rgba(255,255,255,.8);font-size:15px;font-weight:600;text-decoration:none}
-
 .guia-desplazamiento{font-size:12px;color:rgba(255,255,255,.35);margin-top:18px}
-
 .barra-confianza{
   display:flex;background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:4px;margin-top:32px;
@@ -128,24 +211,27 @@ section{
 .valor-confianza{font-size:24px;font-weight:700;color:white;display:block}
 .etiqueta-confianza{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:3px}
 
-/* COLUMNA DE IMAGEN HERO */
-.imagen-clave-hero{
-  display:flex;justify-content:center;align-items:center;
-  position:relative;z-index:5;
-}
 .img-clave-hero{
-  width:100%;
-  max-width:460px;
-  height:auto;
-  object-fit:contain;
-  border-radius:12px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.3);
+  width:100%;max-width:460px;height:auto;object-fit:contain;
+  border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.3);
 }
 
 .mancha{position:absolute;border-radius:50%;filter:blur(60px);z-index:0}
 
+/* CONTROL DE VISIBILIDAD DE ANIMACIONES ORIGINALES */
+.revelar, .desde-izquierda, .desde-derecha, .escala-entrada {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.revelar.activo, .desde-izquierda.activo, .desde-derecha.activo, .escala-entrada.activo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* RESPONSIVO */
 @media(max-width:900px){
-  section{grid-template-columns:1fr;padding:100px 6% 40px;gap:30px}
+  section{grid-template-columns:1fr;padding:100px 6% 40px;gap:40px}
+  section.completa{padding:80px 6%}
   .barra-lateral, .nav-viaje{display:none}
 }
